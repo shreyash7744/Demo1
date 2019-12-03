@@ -8,9 +8,9 @@ public class TableThread extends Thread {
 	{
 		for(int i=1;i<=10;i++)
 		{
-			int tab;
+			int table;
 			
-			System.out.println(tab=t*i);
+			System.out.println(table=t*i);
 			try {
 				Thread.sleep(500);
 			}
