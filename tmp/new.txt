@@ -1,0 +1,1244 @@
+package Assg30;
+
+import java.util.Scanner;
+
+public class AreaOfCircel {
+	
+	double area;
+	int r;
+	
+	public void init()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter radius for circel");
+		r=s.nextInt();
+	}
+	public void cal()
+	{
+		area = 3.14*r*r;
+	}
+	public void display()
+	{
+		System.out.println("Area of circel is "+area);
+	}
+	public static void main(String[] args) {
+		
+		AreaOfCircel a = new  AreaOfCircel();
+		a.init();
+		a.cal();
+		a.display();
+	}
+
+}
+--------------------------------------------------------
+package Assg31;
+
+import java.util.Scanner;
+
+public class MathOpertion {
+	
+	int x,y;
+	static int r;
+	
+	public void inti()
+	{
+		Scanner s = new Scanner(System.in);
+		System.out.println("Eter two number for x and y");
+		x=s.nextInt();
+		y=s.nextInt();
+	}
+
+	public void add()
+	{
+		int add=x+y;
+		r=add;
+		System.out.println("Addition of Two Number is :"+add);
+		 
+	}
+	public void mul()
+	{
+		float mul=x*y;
+		r+=mul;
+		System.out.println("Multipliction of two number is :"+mul);
+	}
+	public void power()
+	{
+		double pow=Math.pow(x,y);
+		r+=pow;
+		System.out.println("Power two number is :"+pow);
+	}
+	public void display()
+	{
+		System.out.println("Value of r is :"+r);
+	}
+	
+	public static void main(String[] args)
+	{
+		MathOpertion m = new MathOpertion();
+		m.inti();
+		m.add();
+		m.mul();
+		m.power();
+		m.display();
+	}
+}
+----------------------------------------------------------------
+
+package Assg32;
+
+public class MathOpertion {
+	
+	public void mul(int a,int b)
+	{
+		int mul = a*b;
+		System.out.println("Multipliction of Two Integer is :"+mul);
+		 
+	}
+	
+	public void mul(float x,float y,float z)
+	{
+		float mul=x*y*z;
+		System.out.println("Multipliction of Three Flaot is "+mul);
+	}
+	public void mul(int arr[])
+	{
+		int mul=1;
+		for(int i=0;i<arr.length;i++)
+		{
+			mul*=arr[i];
+		}
+		System.out.println("Multiplication of array is :"+mul);
+	}
+	public void mul(double e,int f)
+	{
+		double mul = e*f;
+		System.out.println("Multipliction of Double and integer is :"+mul);
+	}
+	public static void main(String[] args)
+	{
+		MathOpertion m =new MathOpertion();
+		int[] arr= {1,2,3};
+		m.mul(5, 2);
+		m.mul(2.0f, 3f, 4.5f);
+		m.mul(arr);
+		m.mul(10.1, 2);
+	}
+
+}
+----------------------------------------------------------
+package Assg33;
+
+public class Person {
+
+	String name;
+	int age;
+	
+	Person()
+	{
+		name="rahul";
+		age=18;
+	}
+	public void show()
+	{
+		System.out.println("The name of person is :"+name);
+		
+		System.out.println("The Age of Person is :"+age);
+	}
+	public static void main(String[] args) {
+		
+		Person p = new Person();
+		p.show();
+	}
+}
+-----------------------------------------------------------------------
+package Assg34;
+
+public class Person {
+	
+	String name;
+	int age;
+	
+	Person()
+	{
+		name="shreyash";
+		age=18;
+		
+	}
+	public void show()
+	{
+		System.out.println("The name OF person is :"+name);
+		System.out.println("The Age Of Person is :"+age);
+	}
+	public static void main(String[] args) {
+		
+		Person p = new Person();
+		Person p1 = new Person();
+		p1=p;
+		p.show();
+		p1.show();
+		
+	}
+
+}
+-------------------------------------------------------------------------
+
+package Assg35;
+
+import java.util.Scanner;
+
+public class Employes {
+	 
+	 int empNo;
+	 float sal;
+	 static int count;
+	 static int totalsal;
+	 
+	public Employes(float sal)
+	{
+		this.sal=sal;
+		count++;
+		empNo=count;
+		totalsal+=sal;
+	}
+
+	@Override
+	public String toString() {
+		return "Employes [empNo=" + empNo + ", sal=" + sal + "]";
+	}
+	
+	public static void display()
+	{
+		System.out.println("Total number employes :"+count);
+		System.out.println("Toatl salary of Employes :"+totalsal);
+	}
+	 
+	 public static void main(String[] args) {
+		
+		 Scanner s = new Scanner(System.in);
+		 System.out.println("Enter Number of Employes");
+		 int n=s.nextInt();
+		 Employes e [] = new Employes[n];
+		 for(int i=0;i<n;i++)
+		 {
+			 System.out.println("Enter the salary :"+i);
+			 float d=s.nextFloat();
+			 e[i]=new Employes(d);
+			 
+		 }
+		 for(int i=0;i<n;i++)
+			{
+				System.out.println(e[i]);
+				
+			}
+		 Employes.display();
+	}
+	 
+	 
+		
+	}
+	
+
+
+----------------------------------------------------------------
+
+package Assg36;
+
+public class Product {
+
+	int pid;
+	float price;
+	int qua;
+	
+	Product(int id,float p,int q)
+	{
+		pid=id;
+		price=p;
+		qua=q;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", price=" + price + ", qua=" + qua + "]";
+	}
+	
+}
+---
+package Assg36;
+
+ 
+import java.util.Scanner;
+
+public class Xyz {
+	
+	static float total;
+	
+	public static void findHighest(Product p[]) 
+	{
+		
+		Product temp=p[0];
+		for(int i=1;i<3;i++)
+		{
+			if(temp.price<p[i].price)
+			{
+				Product demo = temp;
+				temp = p[i];
+				p[i]=demo;
+			}
+		}
+		System.out.println("Height Price is :"+temp);
+	}	
+	public static void TotalAmount(Product p[])
+	{
+		
+		for(int i=0;i<3;i++)
+		{
+			float sum=p[i].price*p[i].qua;
+			total+=sum;
+		}
+		System.out.println("Total amount "+total); 
+		
+	}
+   public static void main(String[] args)
+   {
+	   Product p[] = new Product[3];
+	   Scanner s = new Scanner(System.in);
+	   for(int i=0;i<3;i++)
+	   {
+		   System.out.println("enter product detials :"+i);
+		   int d=s.nextInt();
+		   float pr = s.nextInt();
+		   int t = s.nextInt();
+		   p[i]=new Product(d,pr,t);
+		    
+	   }
+	    for(int i=0;i<3;i++)
+	    {
+	    	System.out.println(p[i]);
+	    }
+	    Xyz.TotalAmount(p);
+	    Xyz.findHighest(p);
+}
+   
+}
+------------------------------------------------------
+package Assg37;
+
+import java.util.Scanner;
+
+public class Student {
+	
+	 String name;
+	 int rollNo;
+	 int age;
+	 int sco;
+	 
+	 public Student(int r,int a,int s,String n)
+	 {
+		 name=n;
+		 rollNo=r;
+		 age=a;
+		 sco=s;
+	 }
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", rollNo=" + rollNo + ", age=" + age + ", sco=" + sco + "]";
+	}
+	 
+	 public static void main(String[] args) {
+		
+		 Scanner s = new Scanner(System.in);
+		 Student e[] = new Student[2];
+		 for(int i=0;i<2;i++)
+		 {
+		 System.out.println("Enter the detials of Student ");
+		 int r=s.nextInt();
+		 int a=s.nextInt();
+		 int z=s.nextInt();
+		 String n=s.next();
+		 e[i]=new Student(r,a,z,n);
+		 }
+		 for(int i=0;i<2;i++)
+		 {
+			 if(e[0].sco<50)
+			 {
+				 System.out.println("Student from 0-50"+e[0]);
+			 }
+			 else if(e[i].sco>50 && e[i].sco<65)
+			 {
+				 System.out.println("Student from 50-65"+e[i]);
+			 }
+			 else if(e[i].sco>65 && e[i].sco<80)
+			 {
+				 System.out.println("Student from 65-80"+e[i]);
+			 }
+			 else if(e[i].sco>80 && e[i].sco<100)
+			 {
+				 System.out.println("Student from 80-100"+e[i]);
+			 }
+		 }
+}
+	 
+}
+--------------------------------------------------------------------
+
+package Assg40;
+
+public class OneBhk {
+	
+	int RoomArea;
+	int HallArea;
+	int Price;
+	static int totalprice;
+	
+	OneBhk()
+	{
+		RoomArea=0;
+		HallArea=0;
+		Price=0;
+	}
+	OneBhk(int r,int h, int p)
+	{
+		RoomArea=r;
+		HallArea=h;
+		Price=p;
+		totalprice+=p;
+	}
+	public void show()
+	{
+		System.out.println("Room Area is :"+RoomArea);
+		System.out.println("Hall Area is :"+HallArea);
+		System.out.println("Price is : "+Price);
+	}
+}
+---
+package Assg40;
+
+public class TwoBhk extends OneBhk {
+	
+	int RoomArea;
+	int HallArea;
+    int Price;
+	int Room2Area;
+	
+	public TwoBhk(int r2,int h2,int r22,int p2)
+	{
+		super();
+		RoomArea=r2;
+		HallArea=h2;
+		Room2Area=r22;
+		Price=p2;
+		totalprice+=p2;
+	}
+	public void show()
+	{
+		System.out.println("Room Area is :"+RoomArea);
+		System.out.println("Hall Area is :"+HallArea);
+		System.out.println("Room Area is :"+Room2Area);
+		System.out.println("Price is : "+Price);
+	}
+	public static void ShowTotal()
+	{
+		System.out.println("Total price :"+totalprice);
+	}
+	 
+
+}
+---
+package Assg40;
+
+import java.util.Scanner;
+
+public class XYZ {
+	
+	 
+	public static void main(String[] args) {
+		
+	 
+Scanner s=new Scanner (System.in);
+OneBhk one[]=new OneBhk[3];
+TwoBhk two[]=new TwoBhk[3];
+for(int i=0;i<=1;i++)
+{
+	System.out.println("Enter RoomArea,Hallarea,Price for OneBhk");
+	int r=s.nextInt();
+	int h=s.nextInt();
+	int p=s.nextInt();
+	one[i]=new OneBhk(r,h,p);
+}
+for(int i=0;i<=1;i++)
+{
+	System.out.println("Enter RoomArea,Hallarea,Room2Area,price for TwoBhk");
+	int r2=s.nextInt();
+	int h2=s.nextInt();
+	int r22=s.nextInt();
+	int p2=s.nextInt();
+	 
+	two[i]=new TwoBhk(r2,h2,r22,p2);
+	
+}
+for(int i=0;i<=1;i++)
+{
+	one[i].show();
+	two[i].show();
+}
+TwoBhk.ShowTotal();
+				
+	}
+
+}
+----------------------------------------------------------
+package Assg41;
+
+import java.util.Scanner;
+
+ public class Faculty {
+ private int fid;
+ protected float salary;
+  
+ public void getData()
+ {
+	 Scanner s=new Scanner (System.in);
+	 System.out.println("Enter Faculty id");
+	 fid=s.nextInt();	 
+ }
+	public void display()
+	{
+		System.out.println("Faculty id is :"+fid);
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
+---
+package Assg41;
+
+import java.util.Scanner;
+
+public class FullTimeFaculty extends Faculty{
+	
+	float basic,Allo;
+	public void getData()
+	{
+		Scanner s=new Scanner(System.in);
+		super.getData();
+		System.out.println("Enter basic");
+		basic=s.nextInt();
+		System.out.println("Enter Allo");
+		Allo=s.nextInt();
+	}
+	public void totalSal()
+	{
+		salary=basic+Allo;
+	}
+	
+	public void display()
+	{
+		super.display();
+		System.out.println("total salary  : "+salary);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
+---
+package Assg41;
+
+import java.util.Scanner;
+
+public class PartTimeFaculty extends Faculty {
+
+	int hours;
+	int rate;
+	 
+	public void gatData()
+	{
+		super.getData();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter the hours ");
+		hours=s.nextInt();
+		System.out.println("Enter the rate");
+		rate=s.nextInt();
+	}
+	public void totalSal()
+	{
+		salary=hours*rate;
+		 
+	}
+	
+	public void display()
+	{
+		super.display();
+		System.out.println("Toatl salary is : "+salary);
+	}
+}
+---
+package Assg41;
+
+public class Result {
+
+	public static void main(String[] args)
+	{// TODO Auto-generated method stub
+		
+	FullTimeFaculty [] f = new FullTimeFaculty[2];
+	for(int i=0;i<f.length;i++)
+	{
+		f[i]=new FullTimeFaculty();
+		f[i].getData();
+		f[i].totalSal();
+		f[i].display();
+	}
+	PartTimeFaculty[] p = new PartTimeFaculty[2];
+	   
+	for(int i=0;i<p.length;i++)
+	{
+		p[i] = new PartTimeFaculty();
+		p[i].gatData();
+		p[i].totalSal();
+		p[i].display();
+	}
+		
+		
+
+	}
+
+}
+-----------------------------------------------------------------------
+
+package Assg42;
+
+public class Student {
+
+	static int count;
+	int rollno;
+	int prec;
+	
+	public Student(int r,int p)
+	{
+		this.rollno=r;
+		this.prec=p;
+		if(prec>75)
+		{
+			count++;
+		}
+	}
+	public void display()
+	{
+		System.out.println("Sudent roll number is :"+rollno);
+		System.out.println("Student percentage is :"+prec);
+	}
+}
+---
+package Assg42;
+
+public class CollegeStudent extends Student{
+	int sem;
+	
+	public CollegeStudent(int rollno,int prec,int sem)
+	{
+		super(rollno,prec);
+		this.sem=sem;
+	}
+	public void display()
+	{
+		super.display();
+		System.out.println("Student semeter :"+sem);
+		
+	}
+
+}
+---
+package Assg42;
+
+public class SchoolStudent extends Student {
+	int classname;
+	
+	public SchoolStudent(int rollno,int prec,int classname)
+	{
+		super(rollno,prec);
+		this.classname=classname;
+	}
+    
+	public void display()
+	{
+		super.display();
+		System.out.println("the classname is :"+classname);
+	}
+}
+package Assg42;
+
+import java.util.Scanner;
+
+public class Result {
+	
+	
+	public static void main(String[] args)
+	{
+		int no;
+	Student s[] = new Student[5];
+	Scanner ob = new Scanner(System.in);
+	s[0]= new CollegeStudent(101,75,5);
+	s[1]= new CollegeStudent(102,85,6);
+	s[2]= new CollegeStudent(103,78,3);
+	s[3]= new SchoolStudent(104,45,4);
+	s[4]= new SchoolStudent(105,75,1);
+	
+	for(Student i:s)
+	{
+		i.display();
+	}
+	System.out.println("Enter rollno to search");
+	no=ob.nextInt();
+	for(Student i:s)
+	{
+		if(i.rollno==no && i instanceof CollegeStudent)
+		{
+			System.out.println("College Student");
+			i.display();
+		}
+		else if(i.rollno==no && i instanceof SchoolStudent)
+		{
+			System.out.println("School Student");
+			i.display();
+		}
+	}
+}
+}
+--------------------------------------------------------------------------
+package Assg44;
+
+public  abstract class Processor {
+	int data;
+	
+	public abstract void process(int d);
+	
+	public void ShowData()
+	{
+		System.out.println("Data is :"+data);
+		
+	}
+
+}
+---
+package Assg44;
+
+public class Circel extends Processor {
+	
+	double a;
+	
+	public void process(int r)
+	{
+		data=r;
+		a=3.14*data*data;
+				
+	}
+	
+	public void ShowData()
+	{
+		System.out.println("Area of circel is :"+a);
+	}
+
+}
+----
+package Assg44;
+
+public class Factorial extends Processor {
+	
+	int fact=1;
+	public void process(int n)
+	{
+		data=n;
+		for(int i=1;i<=n;i++)
+		{
+			fact=fact*i;
+		}
+	}
+	public void ShowData() {
+		
+		System.out.println("Factorial is :"+fact);
+	}
+
+}
+package Assg44;
+
+import java.util.Scanner;
+
+public class Result {
+	 
+	public static void main(String[] args)
+	{
+	
+	
+	Processor f = new Factorial();
+	Processor c = new Circel();
+	Scanner s = new Scanner(System.in);
+     
+	System.out.println("Enter data");
+	
+	int a = s.nextInt();
+	f.process(a);
+	c.process(a);
+	
+	while(true)
+	{
+		System.out.println("1.Factorial\n2.Area of circel\n3.Exit");
+		System.out.println("Enter choice");
+		
+		int ch=s.nextInt();
+		switch(ch)
+		{
+		case 1:
+			  
+	           f.ShowData();
+	           break;
+	           
+		case 2: 
+			   c.ShowData();
+			   break;
+		case 3:
+			   System.exit(1);
+			   break;
+			   default:
+				    System.out.println("Wrong choice");
+				
+			
+	}
+}
+	
+
+}
+	
+}
+
+-----------------------------------------------------------------
+package Assg45;
+
+public interface Taxable {
+	
+	final float SalesTax=7;
+	final float IncomeTax=10.5f;
+	
+	public void Calctax();
+
+}
+---
+package Assg45;
+
+public class Employee implements Taxable {
+	
+	int empId;
+	String name;
+	float sal;
+	double income;
+	
+	public Employee(int i,String n,float s )
+	{
+		empId=i;
+		name=n;
+		sal=s;
+		 
+	}
+	
+	public void Calctax()
+	{
+		income=(IncomeTax*sal)/100;
+		System.out.println("Income tax per year"+income);
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", name=" + name + ", sal=" + sal + ", income=" + income + "]";
+	}
+
+}
+---
+package Assg45;
+
+public class Product implements Taxable {
+	
+	int pid;
+	float price;
+	int qut;
+	double total_price;
+	
+	public Product(int pi,float p,int q)
+	{
+		pid=pi;
+		price=p;
+		qut=q;
+	}
+	
+	public void Calctax()
+	{
+		total_price=price*qut;
+		double result=7.5/100*total_price;
+		System.out.println("Slaes Tax on prouct per year is :"+result);
+		
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Product [pid=" + pid + ", price=" + price + ", qut=" + qut + ", total_price=" + total_price + "]";
+	}
+
+	 
+	 
+
+}
+----
+package Assg45;
+
+import java.util.Scanner;
+
+public class Result {
+	
+	public static void main(String[] args)
+	{
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("Enter the employe id,name and salary");
+		int i =s.nextInt();
+		String n=s.next();
+		float d=s.nextFloat();
+		 
+		Employee e = new Employee(i,n,d);
+		
+		System.out.println("Enter the prouct id ,qut and price");
+		int pid=s.nextInt();
+		float p=s.nextFloat();
+		int q=s.nextInt();
+		
+		Product w = new Product(pid,p,q);
+		
+		System.out.println(e);
+		System.out.println(p);
+		e.Calctax();
+		w.Calctax();
+	}
+
+}
+---------------------------------------------------------------------------------------
+package Assg50;
+
+import java.util.Scanner;
+
+public class Vowel {
+	
+public static void main(String[] args) {
+		
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter String");
+		String str=s.next();
+		
+		System.out.println();
+		int count=0;
+		
+		
+		String str2=str.toLowerCase();
+		System.out.println(str2);
+		
+		for(int i=0;i<str2.length();i++)
+		{
+			if(str2.charAt(i)=='a' || str2.charAt(i)=='e'|| str2.charAt(i)=='i' ||str2.charAt(i)=='o' ||str2.charAt(i)=='u')
+			{
+			count++;	
+			}
+			
+			
+		}
+		System.out.println("Total Vovels in Given String is :"+count);
+	
+	
+	
+	}
+	
+	
+}
+
+
+----------------------------------------------	 
+
+package Assg52;
+
+import java.util.Scanner;
+
+public class Weekdays {
+	
+public static void main(String[] args) {
+		
+		
+		String[] str= {"Sunday","Mon","Tue","Wed","Thurs","Fri","Sat"};
+		
+		Scanner s=new Scanner(System.in);
+		
+		System.out.println("Enter position");
+		
+try {
+		int pos=s.nextInt();
+		
+		if(pos>7)
+		{
+			throw new ArrayIndexOutOfBoundsException("invalid position");
+		}
+		for(int i=0;i<str.length;i++)
+		{
+			if(i==pos)
+			{
+			 System.out.println(str[pos]);
+		
+			}
+		
+		}
+	     
+    }
+catch(Exception e)
+{
+	System.out.println(e);
+}
+	
+	}
+}
+
+
+-----------------------------------------------------------------------
+package Assg47;
+
+import java.util.Scanner;
+
+public abstract class BankAcc {
+	
+	double accno;
+	String name;
+	double bal;
+	String branch;
+	
+	public void getData()
+	{
+		Scanner s =new Scanner(System.in);
+		System.out.println("Enter the Account number");
+		accno=s.nextInt();
+		System.out.println("Enter the Account holder name");
+		name=s.next();
+		System.out.println("Enter the amount to deposited");
+		bal=s.nextDouble();
+		System.out.println("Enter the branch name");
+		branch=s.next();
+		
+		
+	}
+	public void display()
+	{
+		System.out.println("the Account number"+accno);
+		System.out.println(" Account holder name is "+name);
+		System.out.println(" the amount deposited is "+ +bal);
+		System.out.println(" the branch is "+branch );
+	}
+	
+	abstract public void deposit();
+	abstract public void withdraw();
+	 
+	
+
+}
+-----
+package Assg47;
+
+import java.util.Scanner;
+
+public class CurrentAcc extends BankAcc {
+	
+
+	 Scanner s =new Scanner(System.in);
+	 
+	 public void CurrData()
+	 {
+		 super.getData();
+		 if(bal<1000)
+		 {
+			 System.out.println("Current Account need to have 1000");
+		 }
+	 }
+	 
+	 public void display()
+	 {
+		 super.display();
+	 }
+	 public void deposit()
+	 {
+		 double depo;
+		 System.out.println("Enter amount to deposit :");
+		 depo=s.nextDouble();
+		 bal=bal+depo;
+		 System.out.println("Account balance after Deposities :"+bal);
+	 }
+	 
+	 public void withdraw()
+	 {
+		 double with;
+		 System.out.println("Enter amount to withdraw :");
+		 with=s.nextDouble();
+		 if((bal-with)<1000)
+		 {
+			 System.out.println("Account cant go below 1000 enter amount agian :");
+			 with=s.nextDouble();
+			 bal=bal-with;
+		 }
+		 else
+			 bal=bal-with;
+		 System.out.println("account balance after withdraw :"+bal);
+	 }
+
+}
+ -------
+package Assg47;
+
+import java.util.Scanner;
+
+public class SavingAccount extends BankAcc {
+	
+	Scanner s=new Scanner(System.in);
+	public void savingData()
+	{
+		super.getData();
+		while(true)
+		{
+			if (bal<5000)
+			{
+				System.out.println("For saving acc opening balance should be 5000");
+				super.getData();
+			}
+			break;
+		}
+		
+	}
+	
+	public void deposit()
+	{
+		double depo;
+		System.out.println("enter amount to Deposit :");
+		depo=s.nextDouble();
+		bal=bal+depo;
+		System.out.println("Account balance after Deposited :"+bal);
+		
+	}
+	
+	public void withdraw()
+	{
+		double with;
+		System.out.println("enter amount to withdraw :");
+		with=s.nextDouble();
+		if((bal-with)<5000)
+		{
+			System.out.println("Account balance cant go below 5000 enter amount agian");
+			with=s.nextDouble();
+			bal=bal-with;
+		}
+		else
+			bal=bal-with;
+		System.out.println("Account balance after withdrawel :"+bal);
+	}
+	
+
+}
+----
+package Assg47;
+
+import java.util.Scanner;
+
+public class Result {
+	
+	public static void main(String[] args)
+	{
+		int ch;
+		Scanner s =new Scanner(System.in);
+		SavingAccount s1 = new SavingAccount();
+		CurrentAcc c = new CurrentAcc();
+		
+		while(true)
+		{
+			System.out.println("Enter 1 for Saving Account ");
+			System.out.println("Enter 2 for current Account ");
+			System.out.println("Enter your choice ");
+			ch=s.nextInt();
+			switch(ch)
+			{
+			case 1:
+			{
+				s1.savingData();
+				s1.deposit();
+				s1.withdraw();
+				break;
+			}
+			case 2:
+			{
+				c.CurrData();
+				c.deposit();
+				c.withdraw();
+				break;
+			}
+			}
+		}
+	}
+	
+	 
+
+}
+--------------------------------------------------------------------------------------
+
+
+
+package progTable;
+
+public class TableThread {
+int t=5;
+	
+	public void table()
+	{
+		for(int i=1;i<=10;i++)
+		{
+			int tab;
+			
+			System.out.println(tab=t*i);
+			try {
+				Thread.sleep(1000);
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		TableThread t1=new TableThread();
+		t1.start();
+		t1.table();
+		
+	}
+	private void start() {
+		// TODO Auto-generated method stub
+		
+	}
+	 
+}
+
+
+
